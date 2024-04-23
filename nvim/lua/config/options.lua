@@ -20,3 +20,20 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
+
+if not vim.env.SSH_TTY then
+  vim.opt.clipboard = "unnamedplus"
+end
+
+vim.g.clipboard = {
+  name = "win32yank-wsl",
+  copy = {
+    ["+"] = "win32yank.exe -i --crlf",
+    ["*"] = "win32yank.exe -i --crlf",
+  },
+  paste = {
+    ["+"] = "win32yank.exe -i --lf",
+    ["*"] = "win32yank.exe -i --lf",
+  },
+  cache_enable = true,
+}
