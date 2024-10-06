@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
 
-vim.opt.guicursor = ""
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
@@ -37,3 +36,5 @@ vim.g.clipboard = {
   },
   cache_enable = true,
 }
+
+vim.opt.winbar = "%=%{fnamemodify(expand('%'), ':~:.')}%h%m%r%w"
